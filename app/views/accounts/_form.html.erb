@@ -1,0 +1,62 @@
+<%= form_for @account, :html => { :class => "form-horizontal account" } do |f| %>
+
+  <% if @account.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@account.errors.count, "error") %> prohibited this account from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @account.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :company_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :company_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:company_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :invoice_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :invoice_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:invoice_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bill_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :bill_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:bill_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :recieve_payment_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :recieve_payment_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:recieve_payment_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :expense_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :expense_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:expense_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                accounts_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
