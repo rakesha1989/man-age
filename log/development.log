@@ -1398,3 +1398,123 @@ Processing by Admin::DashboardController#index as HTML
   Rendered admin/dashboard/_chat_panel.html.erb (0.0ms)
   Rendered admin/dashboard/index.html.erb within layouts/application (8.2ms)
 Completed 200 OK in 117ms (Views: 115.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/admin/users/sign_in" for ::1 at 2016-03-16 19:03:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 532ms (Views: 499.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/font-awesome.self-549fc40fdc4a24db7d7083d4da9b092dc9758df961f1999e2a976cac1253b42d.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/animate.self-fea0ded26e143f826bc21f4dd76856675b5d1f31eb180436449a03e52401c21b.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/bootstrap.min.self-2c354d7c0179bd35563b93633b23ac5fb07c67d531d40a75695bacbd0eadb799.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/metisMenu.min.self-39a68158cd09f5740df90344edf98bf0dec5b8b07d6f8c5e1faed3f2bbf208f2.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/scaffolds.self-06dbf4d07f65246579e3ad36541189a3e8e96aafb5f46b884418528a7e95cde5.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/morris.self-b331eeb1aa336d072d4e7e055fede5e44d00e73a31cfbfa77b87ebf0d816265c.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/timeline.self-adcf4ac8978841626cabd1a65b1ae2b0419a1ddb13083a5aa5959a60bef9cfb5.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/sb-admin-2.self-055f6b9d2e9470a891a22528a00ee5ff5dda5448b62545a752437043d6477c56.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/bootstrap.min.self-d66e555f160df017adf1ca16a36cd609a36d49c51637e365c5b8847d0065fa40.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/bootstrap-notify.self-1db3a961b9727066bdbf8f0e2c50022c00ffb9fbc9c7d22c29c5d4e3f4c922c3.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/application.self-2f5082505d5fad7e2ca188d9795feb9983caf3a4ef3f5e2a589578f9546e7d1a.css?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/flot-data.self-331b2c3fcf4c137e4b8bf2e6b520c71963ca035c9caddc345e82dbaffea1fe67.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/jquery.flot.self-c14ce1ecd2ce4c63225ea890baab32a8844dc3a9934549b5e9eb1161587a5ec6.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/metisMenu.min.self-0db38256c73148671fb4a78e415b3cc67983c7ee20fdb697fcf4505c673c567d.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/morris-data.self-56aaab5855e4cdbab1ef20ddfc4589d9c9badee04e7599ec74f8d5670526dc12.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/morris.min.self-4af92d7906a27d9873d17376c88128564082ab7acc6e7055d61bd398db3c0276.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/raphael-min.self-941b13323aa7867e65545caa1f27a7cb2e1b6a7346826fb2701e600a7f9fe885.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/sb-admin-2.self-56bd6a6e5b0d37d83b0261b8de91fb454a750a4641c24bdc62f1bc5d860acb39.js?body=1" for ::1 at 2016-03-16 19:03:01 +0530
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-16 19:03:02 +0530
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-03-16 19:03:02 +0530
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2016-03-16 19:03:02 +0530
+
+
+Started POST "/admin/users/sign_in" for ::1 at 2016-03-16 19:03:11 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n5j8nLe+RkYOrjFqk4qfslVHB3e1kyarDiBwerXsQ6qJ0T20sDFMmEkeTMfWDHJmH+WsIw5a2aI0hQG6hTYQUQ==", "user"=>{"email"=>"ajay@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "ajay@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-03-16 08:07:11.441046"], ["current_sign_in_at", "2016-03-16 13:33:11.165557"], ["sign_in_count", 4], ["updated_at", "2016-03-16 13:33:11.166674"], ["id", 1]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3001/
+Completed 302 Found in 118ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2016-03-16 19:03:11 +0530
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3001/admin/dashboard/index
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/dashboard/index" for ::1 at 2016-03-16 19:03:11 +0530
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered admin/dashboard/_notification_boxes.html.erb (0.5ms)
+  Rendered admin/dashboard/_area_chart.html.erb (0.4ms)
+  Rendered admin/dashboard/_bar_chart.html.erb (0.5ms)
+  Rendered admin/dashboard/_responsive_timeline.html.erb (0.6ms)
+  Rendered admin/dashboard/_notifications_panel.html.erb (0.4ms)
+  Rendered admin/dashboard/_donut_chart.html.erb (0.3ms)
+  Rendered admin/dashboard/_chat_panel.html.erb (0.4ms)
+  Rendered admin/dashboard/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 129ms (Views: 126.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/fontawesome-webfont-a7c7e4930090e038a280fd61d88f0dc03dad4aeaedbd8c9be3dd9aa4c3b6f8d1.woff" for ::1 at 2016-03-16 19:03:11 +0530

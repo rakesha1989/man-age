@@ -61,6 +61,7 @@
           <%if current_user.role == "admin"%>
           <!-- /.navbar-header -->
             <%= link_to "Accounts", accounts_path %>
+            <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
           <%end%>
         </nav>
       <% end %>
