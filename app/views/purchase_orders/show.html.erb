@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @purchase_order.supplier_id %>
+</p>
+
+<p>
+  <strong>P o date:</strong>
+  <%= @purchase_order.p_o_date %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @purchase_order.shipping_address %>
+</p>
+
+<p>
+  <strong>Ship to:</strong>
+  <%= @purchase_order.ship_to %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @purchase_order.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @purchase_order.quantity %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @purchase_order.unit %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @purchase_order.rate %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @purchase_order.amount %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @purchase_order.tax %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @purchase_order.message %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @purchase_order.material_id %>
+</p>
+
+<%= link_to 'Edit', edit_purchase_order_path(@purchase_order) %> |
+<%= link_to 'Back', purchase_orders_path %>

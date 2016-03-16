@@ -1,0 +1,55 @@
+<%= form_for @attendence, :html => { :class => "form-horizontal attendence" } do |f| %>
+
+  <% if @attendence.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@attendence.errors.count, "error") %> prohibited this attendence from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @attendence.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :employee_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :employee_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:employee_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :day, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :day, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:day) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :morning, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :morning, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:morning) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :after_noon, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :after_noon, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:after_noon) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                attendences_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

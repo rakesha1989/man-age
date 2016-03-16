@@ -1,6 +1,27 @@
 Rails.application.routes.draw do
 
 
+  resources :suppliers
+  resources :roles
+  resources :recieve_payments
+  resources :purchase_orders
+  resources :products
+  resources :productions
+  resources :product_categories
+  resources :permissions
+  resources :paybills
+  resources :materials
+  resources :material_products
+  resources :invoices
+  resources :expenses
+  resources :employees
+  resources :despatches
+  resources :contacts
+  resources :companies
+  resources :clients
+  resources :categories
+  resources :attendences
+  resources :addstocks
   resources :accounts
   get 'welcome/index'
 

@@ -1,0 +1,83 @@
+<%= form_for @recieve_payment, :html => { :class => "form-horizontal recieve_payment" } do |f| %>
+
+  <% if @recieve_payment.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@recieve_payment.errors.count, "error") %> prohibited this recieve_payment from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @recieve_payment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :client_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :client_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:client_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :invoice_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :invoice_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:invoice_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :payment_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:payment_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :payment_method, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :payment_method, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:payment_method) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :reference_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :reference_no, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:reference_no) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :amount_recieved, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :amount_recieved, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:amount_recieved) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deposited_to, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :deposited_to, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:deposited_to) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                recieve_payments_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

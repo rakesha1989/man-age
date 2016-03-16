@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  dwg_no: MyString
+  available_stock: 1
+  client_id: 1
+  unit_cost: 1
+
+two:
+  name: MyString
+  dwg_no: MyString
+  available_stock: 1
+  client_id: 1
+  unit_cost: 1

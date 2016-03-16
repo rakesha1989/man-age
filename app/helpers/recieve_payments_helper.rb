@@ -1,0 +1,2 @@
+module RecievePaymentsHelper
+end
