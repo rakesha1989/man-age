@@ -1,15 +1,26 @@
 class ExpensesController < ApplicationController
+
+  load_and_authorize_resource
+
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
 
   # GET /expenses
   # GET /expenses.json
   def index
     @expenses = Expense.all
+    #@expenses = (current_user.role? "director") ? Expense.all.order(payment_date: :desc)  : current_user.expenses.order(payment_date: :desc)
   end
 
-  # GET /expenses/1
-  # GET /expenses/1.json
+  # GET /assignments/1
+  # GET /assignments/1.json
   def show
+    #@expense = (current_user.role? "director") ? Expense.find(params[:id]) : current_user.expenses.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Expense" 
+      end
+    end 
   end
 
   # GET /expenses/new

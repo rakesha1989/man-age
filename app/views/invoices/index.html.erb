@@ -27,12 +27,12 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= link_to invoice.id, invoice_path(invoice) %></td>
-        <td><%= invoice.client_id %></td>
+        <td><%= invoice.client.name %></td>
         <td><%= invoice.invoice_number %></td>
         <td><%= invoice.day %></td>
         <td><%= invoice.terms %></td>
         <td><%= invoice.due_date %></td>
-        <td><%= invoice.product_id %></td>
+        <td><%= invoice.product.name %></td>
         <td><%= invoice.description %></td>
         <td><%= invoice.quantity %></td>
         <td><%= invoice.unit %></td>
@@ -40,8 +40,9 @@
         <td><%= invoice.amount %></td>
         <td><%= invoice.tax %></td>
         <td><%= invoice.message %></td>
-        <td><%=l invoice.created_at %></td>
+        <td><%= invoice.created_at %></td>
         <td>
++         
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_invoice_path(invoice), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

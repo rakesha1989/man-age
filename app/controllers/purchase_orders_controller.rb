@@ -1,15 +1,24 @@
 class PurchaseOrdersController < ApplicationController
+
+  load_and_authorize_resource
+
   before_action :set_purchase_order, only: [:show, :edit, :update, :destroy]
 
   # GET /purchase_orders
   # GET /purchase_orders.json
   def index
     @purchase_orders = PurchaseOrder.all
+    #@purchase_orders = (current_user.role? "director") ? PurchaseOrder.all.order(p_o_date: :desc)  : current_user.purchase_orders.order(p_o_date: :desc)
   end
 
-  # GET /purchase_orders/1
-  # GET /purchase_orders/1.json
   def show
+    #@pay_bill = (current_user.role? "director") ? PurchaseOrder.find(params[:id]) : current_user.purchase_orders.find(params[:id]) 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "PurchaseOrder" 
+      end
+    end
   end
 
   # GET /purchase_orders/new

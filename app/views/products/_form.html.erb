@@ -1,37 +1,79 @@
-<%= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+<%= form_for @product, :html => { :class => "form-horizontal product" } do |f| %>
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @product.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
   </div>
-  <div class="field">
-    <%= f.label :dwg_no %><br>
-    <%= f.text_field :dwg_no %>
+  <div class="form-group">
+    <%= f.label :dwg_no, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :dwg_no, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:dwg_no) %>
   </div>
-  <div class="field">
-    <%= f.label :available_stock %><br>
-    <%= f.number_field :available_stock %>
+  <div class="form-group">
+    <%= f.label :available_stock, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :available_stock, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:available_stock) %>
   </div>
-  <div class="field">
-    <%= f.label :client_id %><br>
-    <%= f.number_field :client_id %>
+  <div class="form-group">
+    <%= f.label :client_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :client_id, Client.all,:id, :name, prompt:"select Client", :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:client_id) %>
   </div>
-  <div class="field">
-    <%= f.label :unit_cost %><br>
-    <%= f.number_field :unit_cost %>
+  <div class="form-group">
+    <%= f.label :unit_cost, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :unit_cost, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:unit_cost) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <br/>
+  <h3>Select Category</h3>
+  <% Category.all.each do |category| %>
+                  
+
+   <%= check_box_tag "product[category_ids][]", category.id, @product.category_ids.include?(category.id), :id => dom_id(category) %>
+   <%= label_tag dom_id(category), category.name%><br/>
+                    
+   <%end%>
+<br/>
+<h3>Select Material</h3>
+    <% Material.all.each do |material| %>
+                  
+
+   <%= check_box_tag "product[material_ids][]", material.id, @product.material_ids.include?(material.id), :id => dom_id(material) %>
+   <%= label_tag dom_id(material), material.name%><br/>
+                    
+   <%end%>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

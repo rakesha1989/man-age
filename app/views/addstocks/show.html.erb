@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
   <dd><%= @addstock.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
-  <dd><%= @addstock.material_id %></dd>
+  <dd><%= @addstock.material.try(:name) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

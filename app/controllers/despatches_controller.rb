@@ -1,4 +1,7 @@
 class DespatchesController < ApplicationController
+
+  load_and_authorize_resource
+
   before_action :set_despatch, only: [:show, :edit, :update, :destroy]
 
   # GET /despatches
@@ -10,6 +13,12 @@ class DespatchesController < ApplicationController
   # GET /despatches/1
   # GET /despatches/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Expense" 
+      end
+    end 
   end
 
   # GET /despatches/new

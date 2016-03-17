@@ -22,8 +22,8 @@
     <% @recieve_payments.each do |recieve_payment| %>
       <tr>
         <td><%= link_to recieve_payment.id, recieve_payment_path(recieve_payment) %></td>
-        <td><%= recieve_payment.client_id %></td>
-        <td><%= recieve_payment.invoice_id %></td>
+        <td><%= recieve_payment.client.name %></td>
+        <td><%= recieve_payment.invoice.invoice_number %></td>
         <td><%= recieve_payment.email %></td>
         <td><%= recieve_payment.payment_date %></td>
         <td><%= recieve_payment.payment_method %></td>

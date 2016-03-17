@@ -19,7 +19,7 @@
         <td><%= link_to addstock.id, addstock_path(addstock) %></td>
         <td><%= addstock.stock %></td>
         <td><%= addstock.unit %></td>
-        <td><%= addstock.material_id %></td>
+        <td><%= addstock.material.try(:name) %></td>
         <td><%=l addstock.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

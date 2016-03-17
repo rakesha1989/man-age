@@ -4,14 +4,14 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
-  <dd><%= @production.material_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
   <dd><%= @production.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
   <dd><%= @production.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
-  <dd><%= @production.product_id %></dd>
+  <dd><%= @production.product.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
+  <dd><%= @production.material.try(:name) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

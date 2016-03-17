@@ -1,4 +1,7 @@
 class AddstocksController < ApplicationController
+
+  load_and_authorize_resource
+  
   before_action :set_addstock, only: [:show, :edit, :update, :destroy]
 
   # GET /addstocks

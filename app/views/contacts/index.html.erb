@@ -23,7 +23,7 @@
         <td><%= contact.designation %></td>
         <td><%= contact.email %></td>
         <td><%= contact.mobile %></td>
-        <td><%= contact.client_id %></td>
+        <td><%= contact.client.name %></td>
         <td><%=l contact.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

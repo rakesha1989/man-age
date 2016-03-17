@@ -6,10 +6,10 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:material_id) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:unit) %></th>
       <th><%= model_class.human_attribute_name(:product_id) %></th>
+      <th><%= model_class.human_attribute_name(:material_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,10 +18,10 @@
     <% @productions.each do |production| %>
       <tr>
         <td><%= link_to production.id, production_path(production) %></td>
-        <td><%= production.material_id %></td>
         <td><%= production.quantity %></td>
         <td><%= production.unit %></td>
-        <td><%= production.product_id %></td>
+        <td><%= production.product.name %></td>
+        <td><%= production.material.try(:name) %></td>
         <td><%=l production.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -40,3 +40,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_production_path,
             :class => 'btn btn-primary' %>
+

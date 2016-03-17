@@ -58,11 +58,89 @@
             <a class="navbar-brand" href="<%= root_path %>">SB ADMIN</a>
 
           </div>
-          <%if current_user.role == "admin"%>
+        
           <!-- /.navbar-header -->
-            <%= link_to "Accounts", accounts_path %>
-            <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
-          <%end%>
+           
+            
+
+            
+            <% if can? :create, Client.new %>
+            <%= link_to "Clients", clients_path  %>   
+            <% end %> 
+            
+            <% if can? :create, Addstock.new %>
+            <%= link_to "Add Stocks", addstocks_path  %>  
+            <% end %> 
+            
+            <% if can? :create, Employee.new %>
+            <%= link_to "Employee", employees_path  %>
+            <% end %>
+           
+            <% if can? :create, Invoice.new %>
+            <%= link_to "Invoice", invoices_path  %>
+            <% end %>
+           
+            <% if can? :create, PurchaseOrder.new %>
+            <%= link_to "Purchase Order", purchase_orders_path  %>
+            <% end %>
+            
+            <% if can? :create, RecievePayment.new %>
+            <%= link_to "Recieve Payment", recieve_payments_path  %>
+            <% end %>
+            
+            <% if can? :create, Paybill.new %>
+            <%= link_to "Pay Bills", paybills_path  %>
+            <% end %>
+            
+            <% if can? :create, Expense.new %>
+            <%= link_to "Expenses", expenses_path  %>
+            <% end %>
+           
+            <% if can? :create, Despatch.new %>
+            <%= link_to "Despatch", despatches_path  %>
+            <% end %>
+            
+            <% if can? :create, Supplier.new %>
+            <%= link_to "Suppliers", suppliers_path  %>
+            <% end %>
+          
+            <% if can? :create, Material.new %>
+            <%= link_to "Materials", materials_path %>
+            <% end %>
+            
+            <% if can? :create, Product.new %>
+            <%= link_to "Products", products_path %>
+            <% end %>
+           
+            <% if can? :create, Company.new %>
+            <%= link_to "My Company", companies_path %>
+            <% end %>
+           
+            <% if can? :create, Production.new %>
+            <%= link_to "Daily production", productions_path %>
+            <% end %>
+            
+            <%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> 
+           
+            <%= link_to "sign in", new_user_session_path, :method => 'delete' %>
+        
+          
+            <% if can? :create, Attendence.new %>
+            <%= link_to "Attendance", attendences_path  %>
+            <% end %>
+            
+           
+            <% if can? :create, Category.new %>
+            <%= link_to "Category", categories_path  %>
+            <% end %>
+           
+            <% if can? :create, Contact.new %>
+            <%= link_to "Contacts", contacts_path  %>
+            <% end %>
+            
+             
+          
+          <%= link_to "sign out", destroy_user_session_path, :method => 'delete' %> 
         </nav>
       <% end %>
       <%= yield %>

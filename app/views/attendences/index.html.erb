@@ -1,4 +1,4 @@
-<%- model_class = Attendence -%>
+<%- model_class = Attendance -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -15,19 +15,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @attendences.each do |attendence| %>
+    <% @attendances.each do |attendance| %>
       <tr>
-        <td><%= link_to attendence.id, attendence_path(attendence) %></td>
-        <td><%= attendence.employee_id %></td>
-        <td><%= attendence.day %></td>
-        <td><%= attendence.morning %></td>
-        <td><%= attendence.after_noon %></td>
-        <td><%=l attendence.created_at %></td>
+        <td><%= link_to attendance.id, attendance_path(attendance) %></td>
+        <td><%= attendance.employee.first_name %></td>
+        <td><%= attendance.day %></td>
+        <td><%= attendance.morning %></td>
+        <td><%= attendance.after_noon %></td>
+        <td><%=l attendance.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_attendence_path(attendence), :class => 'btn btn-default btn-xs' %>
+                      edit_attendance_path(attendance), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      attendence_path(attendence),
+                      attendance_path(attendance),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
@@ -38,5 +38,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_attendence_path,
+            new_attendance_path,
             :class => 'btn btn-primary' %>

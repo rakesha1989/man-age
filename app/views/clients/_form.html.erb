@@ -18,14 +18,14 @@
   <div class="form-group">
     <%= f.label :name, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :name, :class => 'form-control' %>
+      <%= f.text_field :name,  :class => 'form-control' %>
     </div>
     <%=f.error_span(:name) %>
   </div>
   <div class="form-group">
     <%= f.label :address, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :address, :class => 'form-control' %>
+      <%= f.text_area :address, :size=>"50", placeholder: "Write Address ", :maxlength=>"254",:class => 'form-control'%>
     </div>
     <%=f.error_span(:address) %>
   </div>
@@ -48,28 +48,28 @@
     <div class="col-lg-10">
       <%= f.text_field :pan_no, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:pan_no) %>
+    <%=f.error_span(:p_a_n_number) %>
   </div>
   <div class="form-group">
     <%= f.label :tin_no, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :tin_no, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:tin_no) %>
+    <%=f.error_span(:t_i_n_number) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :cst_reg, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :c_s_t_reg, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:c_s_t_reg) %>
   </div>
   <div class="form-group">
     <%= f.label :contact_person, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :contact_person, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:contact_person) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :cst_reg, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :cst_reg, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:cst_reg) %>
+    <%=f.error_span(:key_contact_person) %>
   </div>
 
   <div class="form-group">

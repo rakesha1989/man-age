@@ -46,7 +46,7 @@
   <div class="form-group">
     <%= f.label :client_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :client_id, :class => 'form-control' %>
+      <%= f.collection_select :client_id, Client.all, :id, :name, prompt:"Select Client", :class => 'form-control' %>
     </div>
     <%=f.error_span(:client_id) %>
   </div>

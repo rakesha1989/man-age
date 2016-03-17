@@ -1,30 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Purchase Orders</h1>
-
-<table>
+<%- model_class = PurchaseOrder -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Supplier</th>
-      <th>P o date</th>
-      <th>Shipping address</th>
-      <th>Ship to</th>
-      <th>Description</th>
-      <th>Quantity</th>
-      <th>Unit</th>
-      <th>Rate</th>
-      <th>Amount</th>
-      <th>Tax</th>
-      <th>Message</th>
-      <th>Material</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:supplier_id) %></th>
+      <th><%= model_class.human_attribute_name(:material_id) %></th>
+      <th><%= model_class.human_attribute_name(:p_o_date) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_address) %></th>
+      <th><%= model_class.human_attribute_name(:ship_to) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:quantity) %></th>
+      <th><%= model_class.human_attribute_name(:unit) %></th>
+      <th><%= model_class.human_attribute_name(:rate) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:tax) %></th>
+      <th><%= model_class.human_attribute_name(:message) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @purchase_orders.each do |purchase_order| %>
       <tr>
-        <td><%= purchase_order.supplier_id %></td>
+        <td><%= link_to purchase_order.id, purchase_order_path(purchase_order) %></td>
+        <td><%= purchase_order.supplier.name %></td>
+        <td><%= purchase_order.material.name %></td>
         <td><%= purchase_order.p_o_date %></td>
         <td><%= purchase_order.shipping_address %></td>
         <td><%= purchase_order.ship_to %></td>
@@ -35,15 +38,21 @@
         <td><%= purchase_order.amount %></td>
         <td><%= purchase_order.tax %></td>
         <td><%= purchase_order.message %></td>
-        <td><%= purchase_order.material_id %></td>
-        <td><%= link_to 'Show', purchase_order %></td>
-        <td><%= link_to 'Edit', edit_purchase_order_path(purchase_order) %></td>
-        <td><%= link_to 'Destroy', purchase_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l purchase_order.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_purchase_order_path(purchase_order), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      purchase_order_path(purchase_order),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Purchase order', new_purchase_order_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_purchase_order_path,
+            :class => 'btn btn-primary' %>

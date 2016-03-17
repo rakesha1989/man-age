@@ -1,65 +1,113 @@
-<%= form_for(@purchase_order) do |f| %>
-  <% if @purchase_order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@purchase_order.errors.count, "error") %> prohibited this purchase_order from being saved:</h2>
+<%= form_for @purchase_order, :html => { :class => "form-horizontal purchase_order" } do |f| %>
 
-      <ul>
-      <% @purchase_order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @purchase_order.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@purchase_order.errors.count, "error") %> prohibited this purchase_order from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @purchase_order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :supplier_id %><br>
-    <%= f.number_field :supplier_id %>
+  <div class="form-group">
+    <%= f.label :supplier_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :supplier_id, Supplier.all, :id, :name, prompt:"Select Supplier", :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:supplier_id) %>
   </div>
-  <div class="field">
-    <%= f.label :p_o_date %><br>
-    <%= f.date_select :p_o_date %>
+   <div class="form-group">
+    <%= f.label :material_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.collection_select :material_id, Material.all, :id, :name, prompt:"Select Material", :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:material_id) %>
   </div>
-  <div class="field">
-    <%= f.label :shipping_address %><br>
-    <%= f.text_area :shipping_address %>
+
+  <div class="form-group">
+    <%= f.label :p_o_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.date_field :p_o_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:p_o_date) %>
   </div>
-  <div class="field">
-    <%= f.label :ship_to %><br>
-    <%= f.text_field :ship_to %>
+  <div class="form-group">
+    <%= f.label :shipping_address, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :shipping_address, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:shipping_address) %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :ship_to, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :ship_to, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:ship_to) %>
   </div>
-  <div class="field">
-    <%= f.label :quantity %><br>
-    <%= f.text_field :quantity %>
+  
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
   </div>
-  <div class="field">
-    <%= f.label :unit %><br>
-    <%= f.text_field :unit %>
+  <div class="form-group">
+    <%= f.label :quantity, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :quantity, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:quantity) %>
   </div>
-  <div class="field">
-    <%= f.label :rate %><br>
-    <%= f.text_field :rate %>
+  <div class="form-group">
+    <%= f.label :unit, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :unit, %w[Kgs No's], :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:unit) %>
   </div>
-  <div class="field">
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
+  <div class="form-group">
+    <%= f.label :rate, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :rate, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:rate) %>
   </div>
-  <div class="field">
-    <%= f.label :tax %><br>
-    <%= f.text_field :tax %>
+  <div class="form-group">
+    <%= f.label :amount, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :amount, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:amount) %>
   </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
+  <div class="form-group">
+    <%= f.label :tax, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select :tax, %W[14.5% 5.5%], :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tax) %>
   </div>
-  <div class="field">
-    <%= f.label :material_id %><br>
-    <%= f.number_field :material_id %>
+  <div class="form-group">
+    <%= f.label :message, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :message, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:message) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                purchase_orders_path, :class => 'btn btn-default' %>
+    </div>
   </div>
+
 <% end %>

@@ -5,7 +5,7 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:supplier_id) %>:</strong></dt>
-  <dd><%= @expense.supplier_id %></dd>
+  <dd><%= @expense.supplier.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:payee_name) %>:</strong></dt>
   <dd><%= @expense.payee_name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:payment_method) %>:</strong></dt>

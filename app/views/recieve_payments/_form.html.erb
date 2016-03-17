@@ -18,14 +18,14 @@
   <div class="form-group">
     <%= f.label :client_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :client_id, :class => 'form-control' %>
+      <%= f.collection_select :client_id, Client.all, :id, :name, prompt: "Select Client", :class => 'form-control' %>
     </div>
     <%=f.error_span(:client_id) %>
   </div>
   <div class="form-group">
     <%= f.label :invoice_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :invoice_id, :class => 'form-control' %>
+      <%= f.collection_select :invoice_id, Invoice.all, :id, :invoice_number, prompt:"Select Invoice Number", :class => 'form-control' %>
     </div>
     <%=f.error_span(:invoice_id) %>
   </div>
@@ -39,14 +39,14 @@
   <div class="form-group">
     <%= f.label :payment_date, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :payment_date, :class => 'form-control' %>
+      <%= f.date_field :payment_date, :class => 'form-control' %>
     </div>
     <%=f.error_span(:payment_date) %>
   </div>
   <div class="form-group">
     <%= f.label :payment_method, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :payment_method, :class => 'form-control' %>
+      <%= f.select :payment_method, %w[Cash Card InternetBanking ], :class => 'form-control' %>
     </div>
     <%=f.error_span(:payment_method) %>
   </div>

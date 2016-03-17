@@ -7,13 +7,15 @@
   <dt><strong><%= model_class.human_attribute_name(:day) %>:</strong></dt>
   <dd><%= @despatch.day %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
-  <dd><%= @despatch.product_id %></dd>
+  <dd><%= @despatch.product.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:material_id) %>:</strong></dt>
+  <dd><%= @despatch.material.try(:name) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
   <dd><%= @despatch.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
   <dd><%= @despatch.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:client_id) %>:</strong></dt>
-  <dd><%= @despatch.client_id %></dd>
+  <dd><%= @despatch.client.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:d_c_number) %>:</strong></dt>
   <dd><%= @despatch.d_c_number %></dd>
 </dl>

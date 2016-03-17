@@ -1,16 +1,26 @@
 class RecievePaymentsController < ApplicationController
+
+  load_and_authorize_resource
+
   before_action :set_recieve_payment, only: [:show, :edit, :update, :destroy]
 
   # GET /recieve_payments
   # GET /recieve_payments.json
   def index
     @recieve_payments = RecievePayment.all
+    #@recieve_payments = (current_user.role? "director") ? RecievePayment.all.order(payment_date: :desc)  : current_user.recieve_payments.order(payment_date: :desc)
   end
 
-  # GET /recieve_payments/1
-  # GET /recieve_payments/1.json
   def show
+    #@recieve_payment = (current_user.role? "director") ? RecievePayment.find(params[:id]) : current_user.recieve_payments.find(params[:id]) 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "RecievePayment" 
+      end
+    end
   end
+
 
   # GET /recieve_payments/new
   def new
